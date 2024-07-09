@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,700;1,900&display=swap');
+
+:root {
+    --title-font: "Playfair Display", serif;
+    --title-size: 2.5rem;
+    --box-shadow-cointainers: 6px 6px 10px -1px rgba(0,0,0,0.56);
+    --general-padding: clamp(5vw, 7vw, 8vw);
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #52b6d3;
+    height: 100vh;
+}
+
+header {
+    position: relative;
+}
+
+.container{
+    height: 20rem;
+    display: flex;
+    padding: var(--general-padding);
+    align-items: center;
+    position: relative;
+}
+
+.background-clipped {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+    z-index: -1;
+}
+
+h1 {
+    margin-inline-start: 0.5rem;
+    font-family: var(--title-font);
+    font-size: var(--title-size);
+    color: white;
+    position: absolute;
+    bottom: var(--general-padding);
+    left: var(--general-padding);
+    text-shadow: -2px 1px 3px rgba(0,0,0,0.6);
+}
+
+header img {
+    float: left;
+    height: clamp(10rem, 20rem, 100%);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-cointainers);
+}
+
+.description{
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: var(--box-shadow-cointainers);
+    min-height: 80%;
+    position: relative;
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-size: var(--title-size);
+}
+
+.description > p{
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin-block: 1rem;
+}
+
+.description .icons {
+    display: flex;
+    gap: 0.5rem;
+    float: right;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+main {
+    background-color: #fff;
+    padding: 3rem var(--general-padding);
+}
+
+
+.cards {
+    padding-block: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2.5rem;
+}
+    
+
+.card {
+    max-width: 30rem;
+    max-height: 35rem;
+    box-shadow: var(--box-shadow-cointainers);
+    flex: 1 1 30vw;
+}
+
+.card .screenshot {
+    width: 100%;
+    height: 50%;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    font-family: var(--title-font);
+    margin-right: auto;
+}
+
+.card-content .card-icons{
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+.project-description{
+    margin-block-start: 1rem;
+    margin-block-end: 2.5rem;
+}
+
+footer {
+    padding: var(--general-padding);
+    color: #fff;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact {
+    font-size: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+.contact h2 {
+    font-size: 5rem;
+}
+
+.contact .icons{
+    font-size: 3rem;
+    color: black;
+}
+
+footer img {
+    margin-left: auto;
+    width: 50vw;
+    flex: 1;
+}
+
+@media(max-width: 1000px){
+    :root{
+        font-size: 10px;
+    }
+
+}
+
+@media(min-width: 359px) and (max-width: 999px){
+
+    .container{
+        display: block;
+        /* padding: 0; */
+        border: 1px solid red;
+    }
+
+    .container h1{
+        position: static;
+        margin: 0;
+        transform: translate(3rem);
+        z-index: 2;
+    }
+
+    .container img{
+        position: sticky;
+        z-index: 2;
+        float: left;
+    }
+
+    .container .description{
+        transform: scale(80%) translate(5rem, 2rem);
+    }
+
+    main{
+        padding-top: 7rem;
+    }
+
+    footer .contact, footer .icons i{
+        font-size: small;
+    }
+
+    footer .contact h2{
+        font-size: medium;
+    }
+}
+
+@media(max-width: 358px){
+
+    :root{
+        font-size: 8px;
+    }
+
+
+    .background-clipped{
+        clip-path: polygon(100% 26%, 0 55%, 100% 65%);
+    }
+
+    header{
+        min-height: 350px;
+    }
+
+    .container{
+        flex-direction: column;
+        justify-content: stretch;
+        gap: 1rem;
+        padding-inline: 0;
+    }
+
+    .container img {
+        flex: 1;
+    }
+    .description{
+        box-shadow: none;
+        min-height: 20rem;
+        flex: 2;
+    }
+
+    .description p{
+        line-height: 1.5rem;
+        margin-block-end: 3rem;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    
+    footer img {
+        width: 100%;
+    }
+}
